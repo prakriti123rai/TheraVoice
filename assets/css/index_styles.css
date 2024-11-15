@@ -1,0 +1,676 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav{
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 75px;
+   background: rgb(56, 115, 166);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+   z-index: 1000; 
+   /* margin-bottom: 0; */
+  }
+  nav .navbar{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 100%;
+   max-width: 90%;
+   background: rgb(56, 115, 166);
+   margin: auto;
+  }
+  nav .navbar .logo a{
+    color: #fff;
+    font-size: 27px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  nav .navbar .menu{
+    display: flex;
+  }
+  .navbar .menu li{
+    list-style: none;
+    margin: 0 15px;
+  }
+  .navbar .menu li a {
+    position: relative;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .navbar .menu li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .navbar .menu li a:hover::after {
+    width: 100%;
+  }
+  /* Marquee container */
+  .marquee-container {
+    width: 100%; /* Full width of the container */
+    overflow: hidden; /* Hide the overflow to prevent images from showing outside */
+    position: relative; /* To ensure proper positioning */
+  }
+  
+  /* Marquee content */
+  .marquee-content {
+    display: flex; /* Horizontal alignment of the images */
+    animation: slide 60s linear infinite; /* Slower sliding animation */
+    width: max-content; /* Ensure content grows with images */
+  }
+  
+  /* Individual image styling */
+  .marquee-image {
+    flex-shrink: 0; /* Prevent the images from shrinking */
+    width: 200px; /* Set a fixed width for the images */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image covers its area without stretching */
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0); /* Start at the left */
+    }
+    100% {
+      transform: translateX(-100%); /* Move the entire content to the left until the last image exits */
+    }
+  }
+  
+  /* Welcome Section */
+  #Home.welcome-section {
+    padding: 0 0;
+    background: linear-gradient(to right, #cce0e2, #e0cce8);
+    text-align: center;
+    /* height: 600px; */
+    height: auto;
+  }
+  
+  .welcome-container {
+    display: flex; /* Set display to flex */
+    align-items: center; /* Align items to stretch to container height */
+    width: 100%; /* Ensure it occupies full width */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 600px;
+    /* margin-top: 100px; */
+  }
+  
+  .welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:30px;
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .clinic-name {
+    color: #2d0672;
+    font-weight: bold;
+  }
+  
+  .welcome-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #002853;
+  }
+  
+  .welcome-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color:#0a2467;
+  }
+  
+  .explore-btn {
+    padding: 15px 30px;
+    color:white;
+    background-color: rgb(56, 115, 166);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .explore-btn:hover {
+    background-color: #ccc5e5;
+    color: rgb(56, 115, 166);
+    /* color: #fff; */
+    border: 1px solid rgb(56, 115, 166);
+  }
+  
+  .welcome-image {
+    flex: 0 0 auto; /* Prevent the image from growing and only take its width */
+    height: 100%; /* Set the height to 100% to match the container */
+    overflow: hidden; /* Hide overflow to prevent image distortion */
+    margin-left: auto; /* Push the image to the right */
+    /* Optional: set a specific width if needed */
+    width: 40%; /* You can set a specific width here if you want */
+    border: 1px solid rgb(56, 115, 166);
+  }
+  
+  .welcome-image img {
+    width: 100%; /* Ensure the image fills the entire width */
+    height: 100%; /* Ensure the image fills the entire height */
+    object-fit: cover; /* Cover the entire area without stretching */
+  }
+  
+  @media (max-width: 768px) {
+    .welcome-container {
+      flex-direction: column;
+    }
+  
+    .welcome-text h1 {
+      font-size: 2.5rem;
+    }
+  }
+  /* why us section */
+  
+  .why-us {
+    background-color: #65b1e4;
+    height:auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .why-us-container {
+    width: 100vw; /* Full viewport width */
+    margin: 0;
+    padding: 40px 0;
+    background-color: #e8f4fc;
+  }
+  
+  .therapy-content {
+    max-width: 75%; /* Limit the content to 75% of the page width */
+    margin: 0 auto; /* Center the content */
+    text-align: center;
+  }
+  
+  .why-us h2 {
+    font-size: 36px;
+    color: #0a2467;
+    margin-bottom: 40px;
+  }
+  
+  .therapy-items-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .therapy-item {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .therapy-item i {
+    font-size: 40px;
+    color: #3498db;
+    margin-bottom: 20px;
+  }
+  
+  .therapy-item p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .therapy-items-box {
+        flex-direction: column;
+    }
+  }
+  
+  section{
+    display: flex;
+    /* height: 100vh; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #96c7e8;
+    font-size: 70px;
+  }
+  
+  .button a{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    background: #2980b9;
+    padding: 7px 12px;;
+    font-size: 18px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15);
+  }
+  /* How We Work Section */
+  .how-we-work-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    /* text-align: center; */
+  }
+  
+  .how-we-work-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+  }
+  
+  .steps-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    animation: slide-in 2s ease-in-out;
+  }
+  
+  .step {
+    flex: 1;
+    max-width: 250px;
+    min-width: 100px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .step:hover {
+    transform: translateY(-10px);
+  }
+  
+  .icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+  }
+  
+  .icon img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .step h3 {
+    font-size: 20px;
+    color: #27ae60;
+    margin-bottom: 15px;
+  }
+  
+  .step p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Keyframes for Animation */
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .steps-wrapper {
+      flex-direction: column;
+    }
+  
+    .step {
+      max-width: 100%;
+    }
+  }
+  
+  
+  /* About Us Section */
+  .about-us-section {
+    background-color: #f4f4f9;
+    padding: 20px 100px;
+    height: auto;
+    margin: 20px 0;
+  }
+  
+  .about-us-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 30px 30px;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .about-text {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .about-us-section h2 {
+    font-size: 36px;
+    color: #0a2467;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .about-us-section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #27ae60;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+  }
+  
+  .about-us-section p {
+    font-size: 18px;
+    color: #520303;
+    line-height: 1.7;
+    margin-top: 20px;
+  }
+  
+  .about-us-section strong {
+    color: #086a31;
+    font-weight: bold;
+  }
+  
+  .about-us-section em {
+    font-style: italic;
+    color: #00712f;
+    font-size: 20px;
+  }
+  
+  /* Image Styles */
+  .about-image {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(16, 8, 8, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      align-items: center; /* Center align on smaller screens */
+    }
+  
+    .about-text {
+      padding-right: 0;
+      text-align: center;
+    }
+  
+    .about-image {
+      padding-left: 0;
+      margin-top: 20px;
+    }
+  
+    .about-us-section h2 {
+      font-size: 28px;
+    }
+  
+    .about-us-section p {
+      font-size: 16px;
+    }
+  }
+  
+  /* Reviews Section */
+  .testimonials-heading {
+    font-size: 40px; /* Large size for emphasis */
+    font-weight: 700; /* Bold for strong emphasis */
+    color: #0a2467; /* Dark grey for readability */
+    text-align: center; /* Center the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    letter-spacing: 1.5px; /* Slight spacing for elegance */
+  }
+  
+  .scroll-container {
+    overflow: hidden;
+    position: relative;
+    height: auto; /* Adjust height as needed */
+    width: 100%;
+  }
+  
+  .reviews-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: -10px;
+    justify-content: space-between;
+    transition: transform 0.5s ease;
+  }
+  
+  .review-box {
+    flex: 0 0 auto;
+    width: calc(33% - 20px); /* Increased space to account for margins */
+    margin: 10px; /* Added margin for space between boxes */
+    padding: 25px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease; /* Added transition for hover effect */
+  }
+  
+  /* Different background colors for each box */
+  .review-box:nth-child(1) {
+    background-color: #e3f2fd; /* Light Blue */
+  }
+  
+  .review-box:nth-child(2) {
+    background-color: #fff3e0; /* Light Orange */
+  }
+  
+  .review-box:nth-child(3) {
+    background-color: #e8f5e9; /* Light Green */
+  }
+  
+  .review-box:nth-child(4) {
+    background-color: #fce4ec; /* Light Pink */
+  }
+  
+  .review-box:nth-child(5) {
+    background-color: #f3e5f5; /* Light Purple */
+  }
+  
+  .review-box:nth-child(6) {
+    background-color: #fffde7; /* Light Yellow */
+  }
+  
+  .review-box:nth-child(odd) {
+    transform: translateY(-10px);
+  }
+  
+  .review-box:nth-child(even) {
+    transform: translateY(10px);
+  }
+  
+  .review-box i.quote-icon {
+    font-size: 20px;
+    color: #17a2b8;
+  }
+  
+  .review-box .review-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  
+  .review-info .reviewer-name {
+    font-weight: 600;
+    font-size: 17px;
+  }
+  
+  .review-info .reviewer-role {
+    font-size: 16px;
+    font-weight: 500;
+    color: #17a2b8;
+  }
+  
+  .review-info .review-stars {
+    margin-top: 2px;
+  }
+  
+  .review-info .review-stars i {
+    color: #17a2b8;
+  }
+  
+  .review-content .review-image {
+    height: 75px;
+    width: 75px;
+    padding: 3px;
+    background: #17a2b8;
+    border-radius: 50%;
+  }
+  
+  .review-content .review-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  
+  .review-box:hover .review-content .review-image img {
+    border-color: #fff;
+  }
+  
+  @media (max-width: 1045px) {
+    .reviews-wrapper .review-box {
+      width: calc(50% - 20px); /* Adjust width for new margins */
+    }
+  }
+  
+  @media (max-width: 702px) {
+    .reviews-wrapper .review-box {
+      width: 100%;
+      margin: 10px 0; /* Adjust margin for small screens */
+    }
+  }
+  
+  
+  /* Footer */
+  .container{
+    max-width: 1170px;
+    margin:auto;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  ul{
+    list-style: none;
+  }
+  .footer{
+    background-color: #425074;
+      padding: 70px 0;
+  }
+  .footer-col{
+     width: 25%;
+     padding: 0 15px;
+  }
+  .footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+  .footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #eef0f4;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+  .footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+  }
+  .footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+  }
+  .footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  .footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+  }
+  
+  /*responsive*/
+  @media(max-width: 767px){
+    .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+  }
+  }
+  @media(max-width: 574px){
+    .footer-col{
+      width: 100%;
+  }
+  }
+  
